@@ -1,3 +1,17 @@
+/* @import '@skeletonlabs/skeleton/themes/terminus'; */
+/* @import '@skeletonlabs/skeleton/themes/terminus'; */
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
+@import '@skeletonlabs/skeleton';
 @plugin '@tailwindcss/typography';
+@import '@skeletonlabs/skeleton/themes/terminus'; /* or your chosen theme */
+
+/* @import '../terminus-custom'; */
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
