@@ -8,7 +8,8 @@ const config = {
 		}),
 		paths: {
 			base: ''
-		}
+		},
+		trailingSlash: 'always'
 	}
 };
 
