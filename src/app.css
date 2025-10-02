@@ -5,9 +5,9 @@
 @plugin '@tailwindcss/forms';
 @import '@skeletonlabs/skeleton';
 @plugin '@tailwindcss/typography';
-@import '@skeletonlabs/skeleton/themes/terminus'; /* or your chosen theme */
-
-/* @import '../terminus-custom'; */
+@import '../terminuscustom';
+/* @import '@skeletonlabs/skeleton/themes/terminus'; or your chosen theme */
+@import '@fontsource/jetbrains-mono';
 
 html,
 body {
