@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import jslogo from '$lib/assets/jslogo.png';
 
 	let { children } = $props();
 
@@ -10,7 +10,7 @@
 
 <svelte:head>
 	<title>Jude Sanchez</title>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={jslogo} />
 </svelte:head>
 
 {@render children?.()}
