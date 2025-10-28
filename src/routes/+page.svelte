@@ -1,11 +1,15 @@
 <script lang="ts">
-	import { JudeAbout, JudeAsci } from '$lib/assets/jude-asci';
-	import { onMount, tick } from 'svelte';
+	import { JudeAbout, JudeAsci, JudeAsciLong } from '$lib/assets/jude-asci';
+	import BoxOutline from '$lib/BoxOutline.svelte';
+	import { sideNavObj } from '$lib/SideNavObj';
+	import { onMount, tick, type Component } from 'svelte';
 
-	let inputList = [{ type: 'response', text: JudeAsci + JudeAbout }];
+	let inputList = [{ type: 'response', text: JudeAbout }];
 	let typedValue = '';
 
 	let endRef: HTMLDivElement;
+
+	let selectedComponent: Component | undefined;
 
 	onMount(() => {
 		document.addEventListener('keypress', (event) => {
@@ -21,12 +25,12 @@
 	});
 
 	// Scroll to bottom whenever inputList changes
-	$: (async () => {
-		await tick(); // wait until DOM updates
-		if (endRef && inputList) {
-			endRef.scrollIntoView({ behavior: 'auto', block: 'end' });
-		}
-	})();
+	// $: (async () => {
+	// 	await tick(); // wait until DOM updates
+	// 	if (endRef && inputList) {
+	// 		endRef.scrollIntoView({ behavior: 'auto', block: 'end' });
+	// 	}
+	// })();
 
 	function processCommands(command: string): string {
 		const split = command.split(' ', 2);
@@ -49,13 +53,37 @@
 	}
 </script>
 
-<div
-	class="relative h-full w-full bg-[url('/coastal-landscape-fantasy-style.jpg')] bg-cover bg-center p-2"
->
-	<div
-		class="z-10 flex h-full w-full flex-col overflow-y-auto rounded-2xl border-4 border-secondary-600 bg-black/50 p-2 text-[0.4rem] text-tertiary-600 sm:text-[0.7rem] md:text-[1rem] lg:text-base"
+<div class="grid h-full grid-cols-[0.3fr_1fr] grid-rows-[min-content_1fr] gap-2 p-2">
+	<BoxOutline
+		extraTailwind="col-span-2 leading-none base-letter-spacing whitespace-pre text-secondary-600 text-[0.7rem]"
+		>{JudeAsciLong}</BoxOutline
 	>
-		<div class="flex flex-col">
+	<BoxOutline>
+		{#each sideNavObj as navObj}
+			{console.log(navObj.name)}
+			{#if navObj.type === 'header'}
+				<div>{navObj.name}</div>
+				<!-- svelte-ignore element_invalid_self_closing_tag -->
+				<div class="h-0 border-1 border-secondary-600" />
+			{:else}
+				<button
+					class="!m-0 cursor-pointer border-0 !p-0 transition hover:text-gray-400"
+					on:click={() => {
+						console.log('clicked', navObj.name);
+						selectedComponent = navObj.details;
+					}}
+				>
+					{navObj.name}
+				</button>
+			{/if}
+		{/each}
+	</BoxOutline>
+	<BoxOutline extraTailwind="text-tertiary-600">
+		{#if selectedComponent}
+			<svelte:component this={selectedComponent} />
+		{/if}
+
+		<!-- <div class="flex flex-col">
 			{#each inputList as prevInput}
 				<div class="flex">
 					{#if prevInput.type === 'command'}
@@ -68,7 +96,6 @@
 			{/each}
 		</div>
 
-		<!-- Input row -->
 		<div class="flex">
 			<div class="text-nowrap">~/Portfolio %</div>
 			<input
@@ -77,9 +104,8 @@
 				autofocus
 				bind:value={typedValue}
 			/>
-		</div>
+		</div> 
 
-		<!-- Anchor for auto-scroll -->
-		<div bind:this={endRef}></div>
-	</div>
+		<div bind:this={endRef}></div> -->
+	</BoxOutline>
 </div>

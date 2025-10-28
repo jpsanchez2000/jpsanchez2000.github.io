@@ -12,5 +12,6 @@
 	<title>Jude Sanchez</title>
 	<link rel="icon" href={jslogo} />
 </svelte:head>
-
-{@render children?.()}
+<div class="h-full w-full bg-[url('/coastal-landscape-fantasy-style.jpg')] bg-cover bg-center">
+	{@render children?.()}
+</div>
