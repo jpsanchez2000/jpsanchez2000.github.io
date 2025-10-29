@@ -1,5 +1,7 @@
 import { type Component } from 'svelte';
 import RocketLabExperience from './detailsComponents/RocketLabExperience.svelte';
+import ComputerScienceTutor from './detailsComponents/ComputerScienceTutor.svelte';
+import TeachingAssistant from './detailsComponents/TeachingAssistant.svelte';
 
 export const sideNavObj: {
 	type: 'header' | 'clickable';
@@ -15,5 +17,15 @@ export const sideNavObj: {
 		type: 'clickable',
 		name: 'Rocket Lab',
 		details: RocketLabExperience
+	},
+	{
+		type: 'clickable',
+		name: 'Computer Science Tutor',
+		details: ComputerScienceTutor
+	},
+	{
+		type: 'clickable',
+		name: 'Teaching Assistant',
+		details: TeachingAssistant
 	}
 ];

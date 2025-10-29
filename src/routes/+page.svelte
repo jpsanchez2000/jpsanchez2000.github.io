@@ -78,7 +78,7 @@
 			{/if}
 		{/each}
 	</BoxOutline>
-	<BoxOutline extraTailwind="text-tertiary-600">
+	<BoxOutline>
 		{#if selectedComponent}
 			<svelte:component this={selectedComponent} />
 		{/if}
