@@ -17,8 +17,8 @@
 		<span class="text-center">Kubernetes</span>
 		<div class="h-0 border-2 border-secondary-600"></div>
 		<span class="text-[1rem]"
-			>Built and managed site's only Kubernetes cluster. Managed DBs, backups, deployments, jobs,
-			cluster networking.</span
+			>Built and managed site's Kubernetes cluster. Managed DBs, backups, deployments, jobs, cluster
+			networking.</span
 		>
 	</BoxOutline>
 	<BoxOutline>
@@ -36,7 +36,7 @@
 		<span class="h5">Overview</span>
 		<div class="my-2 h-0 border-2 border-secondary-600"></div>
 		<span>
-			Focused on developing applications that allowed increased speed and reliability during the
+			Focused on developing applications that allow increased speed and reliability during the
 			production of space grade solar panels. Applications spanned all aspects of the sites needs,
 			some highlights include:
 		</span>
