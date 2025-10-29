@@ -55,7 +55,7 @@
 
 <div class="grid h-full grid-cols-[0.3fr_1fr] grid-rows-[min-content_1fr] gap-2 p-2">
 	<BoxOutline
-		extraTailwind="col-span-2 leading-none base-letter-spacing whitespace-pre text-secondary-600 text-[0.7rem]"
+		extraTailwind="col-span-2 leading-none base-letter-spacing whitespace-pre text-secondary-600 text-[0.7rem] font-mono"
 		>{JudeAsciLong}</BoxOutline
 	>
 	<BoxOutline>
