@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { JudeAbout, JudeAsci, JudeAsciLong } from '$lib/assets/jude-asci';
 	import BoxOutline from '$lib/BoxOutline.svelte';
+	import HomePage from '$lib/HomePage.svelte';
 	import { sideNavObj } from '$lib/SideNavObj';
 	import { onMount, tick, type Component } from 'svelte';
 
@@ -9,7 +10,7 @@
 
 	let endRef: HTMLDivElement;
 
-	let selectedComponent: Component | undefined;
+	let selectedComponent: Component | undefined = HomePage;
 
 	onMount(() => {
 		document.addEventListener('keypress', (event) => {
@@ -54,10 +55,17 @@
 </script>
 
 <div class="grid h-full grid-cols-[0.3fr_1fr] grid-rows-[min-content_1fr] gap-2 p-2">
-	<BoxOutline
-		extraTailwind="col-span-2 leading-none base-letter-spacing whitespace-pre text-secondary-600 text-[0.7rem] font-mono"
-		>{JudeAsciLong}</BoxOutline
+	<div
+		class="col-span-2 w-full cursor-pointer"
+		on:click={() => {
+			selectedComponent = HomePage;
+		}}
 	>
+		<BoxOutline
+			extraTailwind="leading-none base-letter-spacing whitespace-pre text-secondary-600 text-[0.7rem] font-mono"
+			>{JudeAsciLong}</BoxOutline
+		>
+	</div>
 	<BoxOutline>
 		{#each sideNavObj as navObj}
 			{console.log(navObj.name)}

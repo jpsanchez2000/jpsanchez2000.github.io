@@ -2,7 +2,7 @@
 	import BoxOutline from '$lib/BoxOutline.svelte';
 </script>
 
-<span class="h3"> Solaero Technologies By Rocket lab</span>
+<span class="h3"> Rocket Lab: Solaero Technologies</span>
 <br />
 <span class="h5">Highlights</span>
 <div class="my-4 grid grid-cols-3 gap-3">
