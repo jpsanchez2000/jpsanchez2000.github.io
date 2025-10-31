@@ -54,9 +54,13 @@
 	}
 </script>
 
-<div class="grid h-full grid-cols-[0.3fr_1fr] grid-rows-[min-content_1fr] gap-2 p-2">
+<div
+	class="grid h-full grid-cols-1 gap-2 overflow-y-scroll p-2 md:grid-cols-[0.3fr_1fr] md:grid-rows-[min-content_1fr]"
+>
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
-		class="col-span-2 w-full cursor-pointer"
+		class="w-full cursor-pointer md:col-span-2"
 		on:click={() => {
 			selectedComponent = HomePage;
 		}}
@@ -70,19 +74,22 @@
 		{#each sideNavObj as navObj}
 			{console.log(navObj.name)}
 			{#if navObj.type === 'header'}
-				<div>{navObj.name}</div>
-				<!-- svelte-ignore element_invalid_self_closing_tag -->
-				<div class="h-0 border-1 border-secondary-600" />
-			{:else}
+				<div class="mt-2">{navObj.name}</div>
+				<div class="h-0 border-1 border-secondary-600"></div>
+			{:else if navObj.type === 'clickable'}
 				<button
-					class="!m-0 cursor-pointer border-0 !p-0 transition hover:text-gray-400"
+					class="!m-0 cursor-pointer border-0 !p-0 text-left text-[0.9rem] whitespace-pre-wrap transition hover:text-gray-400"
 					on:click={() => {
 						console.log('clicked', navObj.name);
 						selectedComponent = navObj.details;
 					}}
 				>
-					{navObj.name}
+					- {navObj.name}
 				</button>
+			{:else}
+				<div class="!m-0 border-0 !p-0 text-left text-[0.9rem] whitespace-pre-wrap transition">
+					- {navObj.name}
+				</div>
 			{/if}
 		{/each}
 	</BoxOutline>

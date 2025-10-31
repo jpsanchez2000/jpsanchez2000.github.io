@@ -5,7 +5,7 @@
 <span class="h3"> Rocket Lab: Solaero Technologies</span>
 <br />
 <span class="h5">Highlights</span>
-<div class="my-4 grid grid-cols-3 gap-3">
+<div class="my-4 grid gap-3 md:grid-cols-3">
 	<BoxOutline>
 		<span class="text-center">Full Stack Development</span>
 		<div class="h-0 border-2 border-secondary-600"></div>
@@ -31,7 +31,7 @@
 	</BoxOutline>
 </div>
 
-<div class="grid grid-cols-[1fr_0.3fr] gap-3">
+<div class="grid gap-3 md:grid-cols-[1fr_0.3fr]">
 	<div class="grid h-min grid-cols-1">
 		<span class="h5">Overview</span>
 		<div class="my-2 h-0 border-2 border-secondary-600"></div>
