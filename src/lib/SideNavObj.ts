@@ -25,7 +25,7 @@ export const sideNavObj: {
 	},
 	{
 		type: 'clickable',
-		name: 'Rocket Lab',
+		name: 'Rocket Lab, SWE 2',
 		details: RocketLabExperience
 	},
 	{
